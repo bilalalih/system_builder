@@ -1,0 +1,1 @@
+Smart File Organizer is a Python tool that automatically sort files given to it into categorized folders based on file extensions.
