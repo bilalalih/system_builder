@@ -1,0 +1,1 @@
+A Multi Paricle Simulation that makes use of probability distribution to intialize a number of particles and detects collisions between said particles during the simulation.
