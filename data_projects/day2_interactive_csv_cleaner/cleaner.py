@@ -29,11 +29,11 @@ def load_path(path):
 def fill_na(df):
     for col in df.columns:
         if df[col].dtype in ['float64', 'int64']:
-            df[col].fillna(df[col].median())
+            df[col] = df[col].fillna(df[col].median())
         elif df[col].dtype == 'bool':
-            df[col].fillna(False)
-        else:
-            df[col].fillna("Unknown")
+            df[col] = df[col].fillna(False)
+        elif df[col].dtype == 'object':
+            df[col] = df[col].fillna("Unknown")
     return df
 
 # This function asks the user for the path to save the file
@@ -60,8 +60,9 @@ while True: # A loop that'll keep running
     data = get_file_path()
     df = load_path(data)
     if df is not None:
-        df = fill_na(df)# This line prints out a statistical summary of our dataframe
-        print(df.describe())
+        print(df.head(15))
+        df = fill_na(df)     
+        print(df.head(15))# This line prints out a statistical summary of our dataframe
         pt = save_file_path()
         save_file(df, pt)
         cont = input("Process another file? (y/n): ").lower()

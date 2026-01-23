@@ -1,0 +1,1 @@
+A simple logistic regression model that predicts whether a passsenger on the titanic survived or not
