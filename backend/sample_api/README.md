@@ -1,1 +1,0 @@
-An API that reads and writes to a database, storing and retrieving User Information.
